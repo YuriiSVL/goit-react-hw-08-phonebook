@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <ul>
@@ -13,6 +15,17 @@ const ContactList = ({ contacts, onDeleteContact }) => {
       ))}
     </ul>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+  onDeleteContact: PropTypes.func,
 };
 
 export default ContactList;
