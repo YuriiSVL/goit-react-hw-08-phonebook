@@ -9,10 +9,11 @@ export class App extends React.Component {
     filter: '',
   };
 
-  addContact = contactName => {
+  addContact = data => {
     const contact = {
       id: nanoid(),
-      name: contactName,
+      name: data.name,
+      number: data.number,
     };
     this.setState(prevState => ({
       contacts: [contact, ...prevState.contacts],
