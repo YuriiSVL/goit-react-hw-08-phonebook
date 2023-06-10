@@ -1,6 +1,8 @@
 .contactList {
   padding: 10px;
   width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contactListItem {
@@ -15,4 +17,24 @@
   padding: 5px;
   height: 30px;
   cursor: pointer;
+
+  border-radius: 2px;
+  border: 1px solid rgb(74, 97, 126);
+  background-color: rgb(179, 179, 223);
+  font-weight: bold;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+}
+
+.contactListBtn:hover,
+.contactListBtn:focus {
+  background-color: #42567a;
+  color: #fff;
+
+  transition: all 0.25s;
+}
+
+.ContactListText {
+  font-size: 18px;
+  font-weight: bold;
 }

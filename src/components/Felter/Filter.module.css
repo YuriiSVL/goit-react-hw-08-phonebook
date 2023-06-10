@@ -1,4 +1,17 @@
 .filterInput {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
+  padding: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+}
+
+.filter__label {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -11,7 +11,7 @@ const Filter = () => {
     dispatch(setFilter(e.currentTarget.value));
   };
   return (
-    <label>
+    <label className={css.filter__label}>
       Find contacts by name{' '}
       <input
         className={css.filterInput}
