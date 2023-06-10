@@ -1,11 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import css from 'components/ContactFrom/ContactForm.module.css';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
 
-export const ContactForm = ({ onSubmit }) => {
+export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const contacts = useSelector(state => state.contacts);
+  const dispatch = useDispatch();
+
+  const onSubmit = (name, number) => {
+    const alreadyAddedContact = contacts.find(contact => name === contact.name);
+    if (alreadyAddedContact) {
+      alert(`${alreadyAddedContact.name} is already in contacts`);
+      return;
+    }
+
+    dispatch(addContact(name, number));
+  };
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -25,7 +40,6 @@ export const ContactForm = ({ onSubmit }) => {
   const handleFormSubmit = event => {
     event.preventDefault();
     onSubmit(name, number);
-    console.log(name, number);
     reset();
   };
 
@@ -66,6 +80,6 @@ export const ContactForm = ({ onSubmit }) => {
   );
 };
 
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
-};
+// ContactForm.propTypes = {
+//   onSubmit: PropTypes.func,
+// };
