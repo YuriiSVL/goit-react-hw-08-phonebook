@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import css from 'components/Felter/Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'store/contacts/actions';
+import { setFilter } from 'redux/filterSlice';
 
-const Filter = ({ value, onChange }) => {
+const Filter = () => {
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
-  const onChange1 = e => {
-    console.log(filter);
+  const onChange = e => {
     dispatch(setFilter(e.currentTarget.value));
   };
   return (
@@ -17,7 +16,7 @@ const Filter = ({ value, onChange }) => {
       <input
         className={css.filterInput}
         type="text"
-        value={value}
+        value={filter}
         onChange={onChange}
       />{' '}
     </label>
