@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialContactsState = [];
+const initialContactsState = { contacts: [] };
 
 const contactsSlise = createSlice({
   // Ім'я слайсу
@@ -12,7 +12,7 @@ const contactsSlise = createSlice({
   reducers: {
     addContact: {
       reducer(state, action) {
-        state.push(action.payload);
+        state.contacts.push(action.payload);
       },
       prepare(name, number) {
         return {
@@ -25,8 +25,10 @@ const contactsSlise = createSlice({
       },
     },
     deleteContact(state, action) {
-      const index = state.findIndex(contact => contact.id === action.payload);
-      state.splice(index, 1);
+      const index = state.contacts.findIndex(
+        contact => contact.id === action.payload
+      );
+      state.contacts.splice(index, 1);
     },
   },
 });
@@ -34,4 +36,4 @@ const contactsSlise = createSlice({
 // Генератори екшенів
 export const { addContact, deleteContact } = contactsSlise.actions;
 // Редюсер слайсу
-export const contactsReduser = contactsSlise.reducer;
+export const contactsReducer = contactsSlise.reducer;
