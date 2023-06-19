@@ -3,7 +3,8 @@ import React from 'react';
 import css from 'components/ContactFrom/ContactForm.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+// import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -19,7 +20,7 @@ export const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
   };
 
   const handleChange = e => {
@@ -39,6 +40,7 @@ export const ContactForm = () => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+    console.log(name, number);
     onSubmit(name, number);
     reset();
   };
