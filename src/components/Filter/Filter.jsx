@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import css from 'components/Felter/Filter.module.css';
+import css from 'components/Filter/Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/filter/filterSlice';
 
 const Filter = () => {
   const filter = useSelector(state => state.filter);
