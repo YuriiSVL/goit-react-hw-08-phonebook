@@ -11,8 +11,20 @@ const Home = () => {
           marginRight: 'auto',
         }}
       >
-        Welcome to contact storage app!
+        Phonebook App
       </h1>
+      <p
+        style={{
+          textAlign: 'center',
+          fontSize: '24px',
+          marginTop: '20px',
+          width: '350px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
+        Please, register or log In!
+      </p>
     </div>
   );
 };

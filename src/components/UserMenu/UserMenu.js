@@ -7,10 +7,10 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
   return (
-    <div className={css.userMenuContainer}>
+    <div className={css.container}>
       <p className={css.userName}>{user.name}</p>
       <button
-        className={css.logOutBtn}
+        className={css.button}
         type="button"
         onClick={() => dispatch(logOut())}
       >

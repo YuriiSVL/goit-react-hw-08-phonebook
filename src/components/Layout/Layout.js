@@ -6,7 +6,7 @@ import css from './Layout.module.css';
 
 const Layout = () => {
   return (
-    <div className={css.Layout}>
+    <div className={css.container}>
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />

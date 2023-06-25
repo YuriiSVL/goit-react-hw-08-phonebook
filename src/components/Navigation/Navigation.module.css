@@ -1,0 +1,13 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+  font-weight: 600;
+  font-style: inherit;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

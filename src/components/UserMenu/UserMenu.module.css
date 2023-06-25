@@ -1,0 +1,29 @@
+.button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid rgb(74, 97, 126);
+  background-color: rgb(179, 179, 223);
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+}
+
+.button:hover,
+.button:focus {
+  background-color: #42567a;
+  color: #fff;
+  transition: all 0.25s;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 600;
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
+import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -21,7 +22,7 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      Notiflix.Notify.warning('Something went wrong. Please, try again .');
+      Notiflix.Notify.warning('Sorry, but something is wrong');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -36,7 +37,7 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      Notiflix.Notify.warning('Something went wrong. Please, try again .');
+      Notiflix.Notify.warning('Sorry, but something is wrong');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
