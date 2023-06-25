@@ -1,9 +1,11 @@
 .link {
   text-decoration: none;
-  color: inherit;
+  /* color: inherit; */
+  color: rgb(137, 146, 156);
   font-size: 25px;
   font-weight: 600;
   font-style: inherit;
+  font-family: ubuntu;
 }
 
 .container {

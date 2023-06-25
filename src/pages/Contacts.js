@@ -16,7 +16,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.container}>
+    <div>
       <h2 className={css.container__title}>Phonebook</h2>
       <ContactForm />
       <h2 className={css.container__title}>Contacts</h2>

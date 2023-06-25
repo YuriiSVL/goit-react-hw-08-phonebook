@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
-import AppBar from 'components/AppBar/AppBar';
+// import AppBar from 'components/AppBar/AppBar';
 import css from './Layout.module.css';
 
 const Layout = () => {
   return (
     <div className={css.container}>
-      <AppBar />
+      {/* <AppBar /> */}
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>

@@ -4,6 +4,8 @@ import css from 'components/ContactFrom/ContactForm.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -15,7 +17,8 @@ export const ContactForm = () => {
   const onSubmit = (name, number) => {
     const alreadyAddedContact = contacts.find(contact => name === contact.name);
     if (alreadyAddedContact) {
-      alert(`${alreadyAddedContact.name} is already in contacts`);
+      toast.error(`${alreadyAddedContact.name} is already in contacts`);
+      // alert(`${alreadyAddedContact.name} is already in contacts`);
       return;
     }
 
@@ -39,14 +42,13 @@ export const ContactForm = () => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    console.log(name, number);
     onSubmit(name, number);
     reset();
   };
 
   return (
     <form className={css.contactForm} onSubmit={handleFormSubmit}>
-      <label>
+      <label className={css.label}>
         Name{' '}
         <input
           className={css.contactFormInput}
@@ -61,7 +63,7 @@ export const ContactForm = () => {
         />
       </label>
 
-      <label>
+      <label className={css.label}>
         Number{' '}
         <input
           className={css.contactFormInput}

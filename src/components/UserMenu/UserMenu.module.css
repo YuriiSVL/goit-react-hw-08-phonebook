@@ -8,6 +8,7 @@
   font-weight: bold;
   overflow: hidden;
   color: rgb(0, 0, 0);
+  font-family: ubuntu;
 }
 
 .button:hover,
@@ -26,4 +27,6 @@
 .userName {
   font-size: 20px;
   font-weight: 600;
+  font-family: ubuntu;
+  margin: 0;
 }

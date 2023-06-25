@@ -4,11 +4,12 @@ const Home = () => {
       <h1
         style={{
           textAlign: 'center',
-          fontSize: '36px',
-          marginTop: '30px',
+          fontSize: '40px',
+          marginTop: '90px',
           width: '350px',
           marginLeft: 'auto',
           marginRight: 'auto',
+          fontFamily: 'ubuntu',
         }}
       >
         Phonebook App
@@ -16,11 +17,12 @@ const Home = () => {
       <p
         style={{
           textAlign: 'center',
-          fontSize: '24px',
+          fontSize: '28px',
           marginTop: '20px',
           width: '350px',
           marginLeft: 'auto',
           marginRight: 'auto',
+          fontFamily: 'ubuntu',
         }}
       >
         Please, register or log In!
